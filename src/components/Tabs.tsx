@@ -1,8 +1,6 @@
 import React from 'react'
 
-import  LinearGradient  from 'react-native-linear-gradient'
-
-// import  Icon  from 'react-native-vector-icons/dist/FontAwesome'
+import LinearGradient from 'react-native-linear-gradient';
 
 import styled from 'styled-components/native'
 
@@ -46,8 +44,14 @@ const Button = styled.View`
 	justify-content: center;
 	align-items: center;
 `
+const Border = styled(LinearGradient)`
+	width: 44px;
+	height: 28px;
+	border-radius: 8px;
+	align-items: center;
+`
 
-export const Add = styled.View`
+const Add = styled.View`
     width: 70%;
     padding: 5px;
     display: flex;
@@ -74,11 +78,14 @@ const Tabs = () => {
 				<MenuText>Discover</MenuText>
 			</Menu>
       <Menu>
-        <Add>
+				<Border
+					start={{ x: 1, y: 0 }}
+					locations={[0, 0.5, 0.5, 1]}
+					colors={['#F42365', '#f42365', '#37d7cf', '#37d7cf']}>
           <Button>
             <IconPlus source={require('../assets/icons/plus.png')} />
           </Button>
-        </Add>
+        </Border>
       </Menu>          
 			<Menu>
 				<Icon source={require('../assets/icons/message.png')} />
